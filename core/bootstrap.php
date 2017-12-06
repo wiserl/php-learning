@@ -1,12 +1,8 @@
+
 <?php
-
+use App\Core\App;
+use App\Core\Database\{QueryBuilder, Connection};
 App::bind('config', require 'config.php');
-
-// $config = App::get('config');
-
-// die (var_dump(App::get('config')));
-
 App::bind('database', new QueryBuilder(
-
-    connection::make(App::get('config')['database'])
+    Connection::make(App::get('config')['database'])
 ));

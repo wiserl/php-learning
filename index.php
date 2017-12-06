@@ -5,9 +5,10 @@ require 'core/bootstrap.php';
 
 // die(var_dump($app));
 
+use App\Core\Router;
+use App\Core\Request;
 
-
-require Router::load('routes.php')
+Router::load('app/routes.php')
 
     ->direct(Request::uri(), Request::method());
     
